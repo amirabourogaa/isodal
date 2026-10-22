@@ -38,7 +38,7 @@ section { width: 100%; }
 /* ================= HEADER ================= */
 
 header {
-  position: fixed; top: 0; left: 0; width: 100%; height: 68px;
+  position: fixed; top: 0; left: 0; width: 100%; height: 88px;
   background: #050505e2;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 8%; z-index: 1000;
@@ -48,19 +48,27 @@ header {
 /* ================= LOGO ================= */
 
 .logo, footer .logo {
-  display: flex; align-items: center; gap: 8px;
-  font-size: 25px; font-weight: 900; letter-spacing: -1px;
+  display: flex; align-items: center; 
+  /* On retire le gap et les textes puisqu'il n'y a plus de texte à côté */
 }
 
 .logo-icon, footer .logo-icon {
-  width: 37px; height: 37px; background: var(--yellow); color: #050505;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 21px; font-weight: 900;
-  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0 50%);
+  width: 75px;   /* Taille agrandie */
+  height: 75px;  /* Taille agrandie */
+  border-radius: 50%; 
+  background-color: #f4c33b; /* Fond jaune */
+  
+  background-image: url('assets/img/logo.jpg');
+  background-size: 90% auto; /* L'image prend 90% de la largeur du cercle */
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  flex-shrink: 0;
+  display: block;
+  
+  /* Optionnel : une très légère bordure pour détacher le logo du fond noir */
+  border: 1px solid rgba(255, 255, 255, 0.1); 
 }
-
-.logo-white, .logo-yellow, footer .logo-white, footer .logo-yellow { color: var(--yellow); }
-
 /* ================= NAV ================= */
 
 nav { display: flex; align-items: center; gap: 30px; }
